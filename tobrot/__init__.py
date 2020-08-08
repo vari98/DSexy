@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K | gautamajay52
 
-from logging.handlers import RotatingFileHandler
 import os
 import time
 
@@ -52,26 +51,3 @@ SAVE_THUMBNAIL = Config.SAVE_THUMBNAIL
 CLEAR_THUMBNAIL = Config.CLEAR_THUMBNAIL
 UPLOAD_AS_DOC = Config.UPLOAD_AS_DOC
 BOT_START_TIME = time.time()
-LOG_FILE_ZZGEVC = Config.LOG_FILE_ZZGEVC
-
-if os.path.exists(LOG_FILE_ZZGEVC):
-    with open(LOG_FILE_ZZGEVC, "r+") as f_d:
-        f_d.truncate(0)
-
-# the logging things
-logging.basicConfig(
-    level=logging.DEBUG,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    datefmt="%d-%b-%y %H:%M:%S",
-    handlers=[
-        RotatingFileHandler(
-            LOG_FILE_ZZGEVC,
-            maxBytes=FREE_USER_MAX_FILE_SIZE,
-            backupCount=10
-        ),
-        logging.StreamHandler()
-    ]
-)
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-logging.getLogger("urllib3").setLevel(logging.WARNING)
-LOGGER = logging.getLogger(__name__)
