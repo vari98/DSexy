@@ -74,7 +74,7 @@ async def status_message_f(client, message):
         msg += " | "
         msg += f"{download_current_status}"
         msg += " | "
-        msg += f"<code>{Commandi.CANCEL} {current_gid}</code>"
+        msg += f"<code> {current_gid}</code>"
         msg += " | "
         msg += "\n\n"
     LOGGER.info(msg)
