@@ -3,6 +3,7 @@
 # (c) Shrimadhav U K | gautamajay52
 
 import os
+import time
 
 # the secret configuration specific things
 if bool(os.environ.get("ENV", False)):
@@ -49,3 +50,4 @@ STATUS_COMMAND = Config.STATUS_COMMAND
 SAVE_THUMBNAIL = Config.SAVE_THUMBNAIL
 CLEAR_THUMBNAIL = Config.CLEAR_THUMBNAIL
 UPLOAD_AS_DOC = Config.UPLOAD_AS_DOC
+BOT_START_TIME = time.time()
