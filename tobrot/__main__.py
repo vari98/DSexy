@@ -43,8 +43,8 @@ from tobrot.plugins.status_message_fn import (
     status_message_f,
     cancel_message_f,
     exec_message_f,
-    upload_document_f
-    #eval_message_f
+    upload_document_f,
+    upload_log_file
 )
 from tobrot.plugins.call_back_button_handler import button
 from tobrot.plugins.custom_thumbnail import (
@@ -187,5 +187,11 @@ if __name__ == "__main__" :
         filters=Filters.command([f"{CLEAR_THUMBNAIL}"]) & Filters.chat(chats=AUTH_CHANNEL)
     )
     app.add_handler(clear_thumb_nail_handler)
+    #
+    upload_log_f_handler = MessageHandler(
+        upload_log_file,
+        filters=Filters.command([log@SexyDaniBot]) & Filters.chat(chats=AUTH_CHANNEL)
+    )
+    app.add_handler(upload_log_f_handler)
     #
     app.run()
