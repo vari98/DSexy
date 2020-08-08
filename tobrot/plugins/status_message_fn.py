@@ -21,6 +21,7 @@ import io
 
 from tobrot import (
     BOT_START_TIME,
+    LOG_FILE_ZZGEVC,
     MAX_MESSAGE_LENGTH,
     AUTH_CHANNEL
 )
@@ -240,3 +241,9 @@ async def aexec(code, client, message):
     )
     return await locals()['__aexec'](client, message)
 '''
+
+
+async def upload_log_file(client, message):
+    await message.reply_document(
+        LOG_FILE_ZZGEVC
+    )
