@@ -190,7 +190,7 @@ if __name__ == "__main__" :
     #
     upload_log_f_handler = MessageHandler(
         upload_log_file,
-        filters=Filters.command([log@SexyDaniBot]) & Filters.chat(chats=AUTH_CHANNEL)
+        filters=Filters.command(["log@SexyDaniBot"]) & Filters.chat(chats=AUTH_CHANNEL)
     )
     app.add_handler(upload_log_f_handler)
     #
