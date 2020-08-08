@@ -48,3 +48,5 @@ class Config(object):
     SAVE_THUMBNAIL = os.environ.get("SAVE_THUMBNAIL", "savethumbnail")
     CLEAR_THUMBNAIL = os.environ.get("CLEAR_THUMBNAIL", "clearthumbnail")
     UPLOAD_AS_DOC = os.environ.get("UPLOAD_AS_DOC", "False")
+    # 
+    LOG_FILE_ZZGEVC = get_config("LOG_FILE_ZZGEVC", "sleepy-fjord-55293.log")
